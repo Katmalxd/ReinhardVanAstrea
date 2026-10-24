@@ -1,0 +1,9 @@
+{
+  "item.reinhard_addon.reinhard_sword": "Sword of the Sword Saint",
+  "tooltip.reinhard_addon.reinhard_sword.1": "Wielded by Reinhard van Astrea.",
+  "tooltip.reinhard_addon.reinhard_sword.2": "Only in his hands does the Sunstrike answer.",
+  "entity.reinhard_addon.reinhard_sunstrike": "Holy Sunstrike",
+  "commands.reinhard_addon.not_mca": "That entity is not an MCA villager.",
+  "commands.reinhard_addon.converted": "%s is now Reinhard van Astrea.",
+  "commands.reinhard_addon.summoned": "Reinhard van Astrea has arrived."
+}

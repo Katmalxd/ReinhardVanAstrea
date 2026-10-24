@@ -1,0 +1,9 @@
+{
+  "item.reinhard_addon.reinhard_sword": "Espada del Santo de la Espada",
+  "tooltip.reinhard_addon.reinhard_sword.1": "Empuñada por Reinhard van Astrea.",
+  "tooltip.reinhard_addon.reinhard_sword.2": "Solo en sus manos responde el Sunstrike.",
+  "entity.reinhard_addon.reinhard_sunstrike": "Sunstrike Sagrado",
+  "commands.reinhard_addon.not_mca": "Esa entidad no es un aldeano de MCA.",
+  "commands.reinhard_addon.converted": "%s ahora es Reinhard van Astrea.",
+  "commands.reinhard_addon.summoned": "Reinhard van Astrea ha llegado."
+}

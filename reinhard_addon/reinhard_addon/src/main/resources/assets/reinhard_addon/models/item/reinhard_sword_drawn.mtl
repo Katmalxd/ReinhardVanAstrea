@@ -1,0 +1,11 @@
+newmtl dragon
+Kd 1 1 1
+Ka 0 0 0
+d 1
+map_Kd reinhard_addon:item/reinhard_sword
+# Dragon emissive overlay
+newmtl dragon_glow
+Kd 1 1 1
+Ka 1 1 1
+d 1
+map_Kd reinhard_addon:item/reinhard_sword_glow

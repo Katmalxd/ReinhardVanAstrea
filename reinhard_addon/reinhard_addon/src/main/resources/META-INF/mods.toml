@@ -1,0 +1,44 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="reinhard_addon"
+version="${file.jarVersion}"
+displayName="Reinhard van Astrea - MCA Addon"
+description='''
+Convierte a un aldeano de Minecraft Comes Alive en Reinhard van Astrea:
+espada propia (modelo portado de Tensura Blade) y un Sunstrike de Mowzie's Mobs
+ampliado y en blanco puro, que solo el aldeano con la espada puede invocar.
+'''
+
+[[dependencies.reinhard_addon]]
+modId="forge"
+mandatory=true
+versionRange="[47,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.reinhard_addon]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1,1.21)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.reinhard_addon]]
+modId="mca"
+mandatory=true
+versionRange="[7.7,)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.reinhard_addon]]
+modId="mowziesmobs"
+mandatory=true
+versionRange="[1.8.2,)"
+ordering="AFTER"
+side="BOTH"
+
+[[mixins]]
+config="reinhard_addon.mixins.json"

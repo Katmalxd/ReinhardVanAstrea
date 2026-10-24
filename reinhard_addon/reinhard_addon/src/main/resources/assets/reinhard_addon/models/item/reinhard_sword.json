@@ -1,0 +1,121 @@
+{
+  "loader": "forge:obj",
+  "model": "reinhard_addon:models/item/reinhard_sword.obj",
+  "automatic_culling": false,
+  "shade_quads": true,
+  "flip_v": false,
+  "emissive_ambient": true,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "reinhard_addon:item/reinhard_sword"
+  },
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [
+        0,
+        90,
+        -180
+      ],
+      "scale": [
+        0.65,
+        0.65,
+        0.65
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        0,
+        90,
+        -180
+      ],
+      "scale": [
+        0.65,
+        0.65,
+        0.65
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        0,
+        -78,
+        175
+      ],
+      "translation": [
+        -0.25,
+        1.5,
+        0
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        0,
+        -77,
+        175
+      ],
+      "scale": [
+        0.54,
+        0.58,
+        0.5
+      ]
+    },
+    "ground": {
+      "translation": [
+        0,
+        8.5,
+        0
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "gui": {
+      "rotation": [
+        0,
+        0,
+        -47
+      ],
+      "translation": [
+        -2.21699,
+        -1.92487,
+        0
+      ],
+      "scale": [
+        0.45,
+        0.45,
+        0.45
+      ]
+    },
+    "fixed": {
+      "rotation": [
+        0,
+        -180,
+        -47
+      ],
+      "translation": [
+        2,
+        -1.93397,
+        0
+      ],
+      "scale": [
+        0.45,
+        0.45,
+        0.45
+      ]
+    }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "reinhard_addon:drawn": 1
+      },
+      "model": "reinhard_addon:item/reinhard_sword_drawn"
+    }
+  ]
+}
