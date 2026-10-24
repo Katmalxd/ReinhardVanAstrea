@@ -1,0 +1,61 @@
+// Plantilla estándar ForgeGradle 6 + Mixin para Minecraft 1.20.1.
+// Si ya tienes un MDK de Forge 1.20.1 funcionando, puedes copiar solo src/ y el bloque
+// "repositories / dependencies / mixin" de este archivo.
+plugins {
+    id 'eclipse'
+    id 'idea'
+    id 'net.minecraftforge.gradle' version '[6.0.24,6.2)'
+    id 'org.spongepowered.mixin' version '0.7.+'
+}
+
+version = '1.0.0'
+group   = 'com.reinhardaddon'
+base { archivesName = 'reinhard_addon' }
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+minecraft {
+    mappings channel: 'official', version: '1.20.1'
+    copyIdeResources = true
+    runs {
+        configureEach {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            mods { reinhard_addon { source sourceSets.main } }
+        }
+        client { }
+        server { args '--nogui' }
+    }
+}
+
+repositories {
+    // Coloca aquí los .jar renombrados (ver libs/README.txt)
+    flatDir { dir 'libs' }
+    maven { name = 'GeckoLib'; url = 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
+}
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.20.1-47.3.0'
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+
+    // Mowzie's Mobs exige GeckoLib >= 4.4.2
+    implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.20.1:4.4.2')
+    // flatDir: 'grupo:nombre:versión'  ->  libs/<nombre>-<versión>.jar  (el grupo se ignora)
+    implementation fg.deobf('local:mowziesmobs:1.8.2')
+    implementation fg.deobf('local:mca:7.7.1')
+}
+
+mixin {
+    add sourceSets.main, 'reinhard_addon.refmap.json'
+    config 'reinhard_addon.mixins.json'
+}
+
+jar {
+    manifest.attributes([
+        'Implementation-Title'  : 'reinhard_addon',
+        'Implementation-Version': project.version,
+        'MixinConfigs'          : 'reinhard_addon.mixins.json'
+    ])
+    finalizedBy 'reobfJar'
+}
