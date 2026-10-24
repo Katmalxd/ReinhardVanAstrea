@@ -1,0 +1,31 @@
+name: Construir reinhard_addon.jar
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout del código
+      uses: actions/checkout@v3
+
+    - name: Configurar JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: Dar permisos de ejecución a Gradle
+      run: chmod +x gradlew
+
+    - name: Compilar el Mod
+      run: ./gradlew build
+
+    - name: Subir Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: reinhard_addon-jar
+        path: build/libs/*-all.jar # O usa *.jar si no usas shadow
